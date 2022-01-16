@@ -1,0 +1,60 @@
+.Acc_transactionHistoryContainer {
+  width: 1300px;
+  background-color: #282d2b;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: aliceblue;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryHeader button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 7px;
+  cursor: pointer;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryProperties {
+  display: flex;
+  justify-content: space-between;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryProperties .Acc_transactionHistorySlotAge {
+  display: flex;
+  gap: 88px;
+  padding-right: 5px;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryInfo .Acc_transactionHistoryInfoData {
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  padding: 5px;
+  border-radius: 5px;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryInfo .Acc_transactionHistoryInfoData:hover {
+  background-color: black;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryInfo .Acc_transactionHistoryInfoData a {
+  cursor: pointer;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryInfo .Acc_transactionHistoryInfoData .Acc_transactionHistoryInfoSlotBlockTime {
+  display: flex;
+  gap: 40px;
+}
+.Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryInfo .Acc_transactionHistoryInfoData p:last-child {
+  background-color: #116939;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 12px;
+}/*# sourceMappingURL=TransactionHistory.css.map */

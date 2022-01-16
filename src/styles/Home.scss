@@ -1,0 +1,101 @@
+.App {
+  background-color: #f4f7fc;
+  height: 100vh;
+  .App_container {
+    background-color: #f4f7fc;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .App_nftEmpty {
+      margin-top: 50px;
+    }
+
+    .App_searchBar {
+      display: flex;
+      flex-direction: row;
+      input {
+        width: 400px;
+        height: 35px;
+        font-size: 17px;
+        border-radius: 10px 0 0 10px;
+        outline: none;
+        border: 1px solid black;
+        border-right: none;
+        padding-left: 10px;
+      }
+      button {
+        border: none;
+        border-radius: 0 10px 10px 0;
+        background-color: teal;
+        color: white;
+        cursor: pointer;
+        font-weight: 700;
+        border: 1px solid black;
+      }
+    }
+    .App_allMetaData {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .App_nftMetaData {
+        background-color: #f4f7fc;
+        padding: 80px;
+        display: flex;
+        gap: 50px;
+        .App_left {
+          max-width: 50%;
+          img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+          }
+          .App_nftAttributesContainerDescription {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            .App_nftAttributesContainer {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              justify-content: center;
+              .App_nftAttributes {
+                width: 200px;
+                margin-left: 5px;
+                :first-child {
+                  border-radius: 10px 10px 0 0;
+                  background-color: #9fa4dd;
+                  padding: 5px 0 5px 5px;
+                }
+                :last-child {
+                  border-radius: 0 0 10px 10px;
+                  background-color: #f4f7fc;
+                  padding: 5px 0 5px 5px;
+                }
+              }
+            }
+            .breakLine {
+              height: 2px;
+              background-color: #ccc;
+              width: 100%;
+              margin: 50px 0;
+            }
+          }
+        }
+        .App_right {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .App_rightWrapper {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
