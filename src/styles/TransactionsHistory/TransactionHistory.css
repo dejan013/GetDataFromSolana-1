@@ -27,7 +27,7 @@
 }
 .Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryProperties .Acc_transactionHistorySlotAge {
   display: flex;
-  gap: 88px;
+  gap: 84px;
   padding-right: 5px;
 }
 .Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryInfo {
@@ -53,7 +53,6 @@
   gap: 40px;
 }
 .Acc_transactionHistoryContainer .Acc_transactionHistory .Acc_transactionHistoryInfo .Acc_transactionHistoryInfoData p:last-child {
-  background-color: #116939;
   padding: 2px 7px;
   border-radius: 5px;
   font-size: 12px;

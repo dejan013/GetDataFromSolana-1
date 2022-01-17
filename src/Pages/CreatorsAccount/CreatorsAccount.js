@@ -1,18 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getAccountTransactionsHistory } from "../../features/allData";
-
+import { useSelector } from "react-redux";
 import "../../styles/CreatorsAccount/CreatorsAccount.css";
-
-import "moment-timezone";
 import TransactionsHistory from "../../Components/TransactionsHistory/TransactionsHistory";
 
 function CreatorsAccount() {
   const creatorsAccountData = useSelector((state) => state.allData.creatorsAccountData);
-  const accountTransactionsHistory = useSelector((state) => state.allData.accountTransactionsHistory);
-  console.log(accountTransactionsHistory);
-  console.log(creatorsAccountData);
-  const dispatch = useDispatch();
 
   return (
     <div className="Acc">

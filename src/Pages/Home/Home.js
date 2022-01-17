@@ -12,14 +12,10 @@ function Home() {
   const dispatch = useDispatch();
   const [searchData, setSearchData] = useState("");
   const nftData = useSelector((state) => state.allData.nftData);
-  const accountTransactionsHistory = useSelector((state) => state.allData.accountTransactionsHistory);
   const creatorsAccountData = useSelector((state) => state.allData.creatorsAccountData);
-  console.log(nftData);
-
   const searchNft = (e) => {
     e.preventDefault();
     axios.get(`https://public-api.solscan.io/account/${searchData}`).then((res) => {
-      console.log(res.data);
       const newMetaData = {
         priceSol: res.data.lamports / 1000000000,
         ownerProgram: res.data.ownerProgram,
@@ -42,16 +38,16 @@ function Home() {
         creators: res.data.metadata.data.properties.creators,
       };
       dispatch(getNftData(newMetaData));
-      dispatch(setSpinner(true))
+      dispatch(setSpinner(true));
     });
   };
-
-  const getCreatorsAccountDataHandler = () => {
-    const accountData = axios.get("https://public-api.solscan.io/account/3SSeYf1MsfTpbzTauFRyyTe5C9dVcqmmNydSHKLHKWUz");
+  console.log(creatorsAccountData);
+  const getCreatorsAccountDataHandler = (addresse) => {
+    dispatch(setSpinner(true));
+    const accountData = axios.get(`https://public-api.solscan.io/account/${addresse}`);
     const accountTransactionsHistory = axios.get(
-      "https://public-api.solscan.io/account/transactions?account=3SSeYf1MsfTpbzTauFRyyTe5C9dVcqmmNydSHKLHKWUz&limit=50"
+      ` https://public-api.solscan.io/account/transactions?account=${addresse}&limit=50`
     );
-
     axios.all([accountData, accountTransactionsHistory]).then(
       axios.spread(function (res1, res2) {
         if (res1 && res2) {
@@ -105,11 +101,11 @@ function Home() {
                 <div className="App_rightWrapper">
                   {nftData.creators ? (
                     <div>
-                      <h3>Creator</h3>
+                      <h3>Creators</h3>
                       {nftData?.creators.map((creator) => {
                         return (
                           <div key={creator.address}>
-                            <Link onClick={() => getCreatorsAccountDataHandler()} to="/CreatorsAccount">
+                            <Link onClick={() => getCreatorsAccountDataHandler(creator.address)} to="/CreatorsAccount">
                               {creator.address}
                             </Link>
                             <p>{creator.share}%</p>
@@ -120,11 +116,11 @@ function Home() {
                   ) : null}
                 </div>
                 <div className="App_rightWrapper">
-                  <h4>tokenAuthority:</h4>
+                  <h4>Token Authority:</h4>
                   <div>
-                    <a href={`https://explorer.solana.com/address/${nftData.tokenAuthority}`} target="_blank">
+                    <Link onClick={() => getCreatorsAccountDataHandler(nftData.tokenAuthority)} to="/CreatorsAccount">
                       {nftData.tokenAuthority}
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="App_rightWrapper">
